@@ -1,0 +1,52 @@
+.container {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.container:after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity: 0.7;
+}
+
+img{
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+
+.details {
+    padding: 20px;
+}
+
+.details>h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 10px 0 15px 0;
+}
+
+.equipmentdiv{
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 10px 0 15px 0;
+}
+
+.equipmentdiv>li{
+    padding-left: 15px;
+    padding-top: 8px;
+    font-weight: 300;
+}
+
+.details>p {
+    color: #a0a0a0;
+    font-size: 12px;
+    line-height: 30px;
+    font-weight: 400;
+}
