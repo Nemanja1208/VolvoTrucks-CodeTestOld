@@ -1,6 +1,5 @@
 //Important
 import React, { useState, useEffect } from 'react';
-// import { v1 as uuidv1 } from 'uuid';
 import axios from 'axios';
 import vehicleData from '../../data/vehicles.json';
 import equipmentData from '../../data/equipments.json';
@@ -11,8 +10,6 @@ import DeleteVehiclePopUp from './DeleteVehiclePopUp';
 // Material UI & Styling
 import './Vehicles.css';
 import LensIcon from '@material-ui/icons/Lens';
-
-
 
 const Vehicles = () => {
 
@@ -82,7 +79,6 @@ const Vehicles = () => {
     saveToVehicleJSONFile(allVehiclesAfterDeleting);
     
   }
-
 
   // WRITE TO JSON FILE
 

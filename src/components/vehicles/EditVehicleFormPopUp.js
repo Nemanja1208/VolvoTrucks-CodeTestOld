@@ -41,7 +41,7 @@ function EditVehicleFormPopUp({
     },
     textFields: {
       margin: theme.spacing(1),
-      width: '250px',
+      width: '25%',
     },
     formControl: {
       margin: theme.spacing(1),
@@ -61,15 +61,12 @@ function EditVehicleFormPopUp({
             maxWidth="lg"
             open={openEditVehicleForm}
             onClose={handleCloseEditVehicleForm}
-            aria-labelledby="alert-dialog-slide-title"
-            aria-describedby="alert-dialog-slide-description"
           >
             <DialogTitle id="alert-dialog-slide-title">{" Edit the Vehicle "} <EditOutlinedIcon /></DialogTitle>
             <div className="editVehicleForm">
               <form className={classes.form} noValidate autoComplete="off">
                 <TextField
                   className={classes.textFields}
-                  id="outlined-basic"
                   label="Vehicle Registration number"
                   variant="outlined"
                   onChange={e => setUpdateVehicleData(updateVehicleData => ({
@@ -80,7 +77,6 @@ function EditVehicleFormPopUp({
                 <Tooltip title="If you change the name, the image will disappear" aria-label="If you change the name, the image will disappear">
                 <TextField
                   className={classes.textFields}
-                  id="outlined-basic"
                   label="Vehicle Driver"
                   variant="outlined"
                   onChange={e => setUpdateVehicleData(updateVehicleData => ({
@@ -91,7 +87,6 @@ function EditVehicleFormPopUp({
                 </Tooltip>
                 <TextField
                   className={classes.textFields}
-                  id="outlined-basic"
                   label="Vehicle Fuel Type"
                   variant="outlined"
                   onChange={e => setUpdateVehicleData(updateVehicleData => ({
@@ -102,8 +97,6 @@ function EditVehicleFormPopUp({
                 <FormControl variant="outlined" className={classes.formControl}>
                   <InputLabel id="demo-simple-select-outlined-label">Status</InputLabel>
                   <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
                     onChange={e => setUpdateVehicleData(updateVehicleData => ({
                       ...updateVehicleData, status: e.target.value
                     }))}
