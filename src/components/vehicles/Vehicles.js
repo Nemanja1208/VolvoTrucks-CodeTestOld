@@ -6,13 +6,10 @@ import vehicleData from '../../data/vehicles.json';
 import equipmentData from '../../data/equipments.json';
 import CardDetails from '../vehicles/CardDetails';
 import EditVehicleFormPopUp from './EditVehicleFormPopUp';
+import DeleteVehiclePopUp from './DeleteVehiclePopUp';
 
 // Material UI & Styling
 import './Vehicles.css';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import LensIcon from '@material-ui/icons/Lens';
 
 
@@ -161,6 +158,7 @@ const Vehicles = () => {
           />
         </div>
       ) : null }
+
       <div className="cards">
         { vehicles ? vehicles.map(vehicle => {
           return(
@@ -171,24 +169,12 @@ const Vehicles = () => {
               handleOpenEditVehicleForm={handleOpenEditVehicleForm}
               handleOpenDeleteAlert={handleOpenDeleteAlert}
             />
-              <div>
-                <Dialog
-                  open={openDeleteAlert}
-                  onClose={handleCloseDeleteAlert}
-                  aria-labelledby="alert-dialog-slide-title"
-                  aria-describedby="alert-dialog-slide-description"
-                >
-                  <DialogTitle id="alert-dialog-slide-title">{"Are you sure that you want to delete this vehicle ? "}</DialogTitle>
-                  <DialogActions>
-                    <Button variant="contained" onClick={() =>  deleteVehicle(vehicle.id) } color="secondary">
-                      Yes, Delete
-                    </Button>
-                    <Button variant="contained" color="primary" onClick={handleCloseDeleteAlert} >
-                      No, take me back
-                    </Button>
-                  </DialogActions>
-                </Dialog>
-             </div>
+            <DeleteVehiclePopUp
+              openDeleteAlert={openDeleteAlert}
+              handleCloseDeleteAlert={handleCloseDeleteAlert}
+              deleteVehicle={deleteVehicle}
+              vehicle={vehicle}
+            />
             <div className="activestatus">
                 {vehicle.status === "active" ? (<p>ACTIVE <LensIcon style={{fill: "green"}} /></p>) : (<p>INACTIVE <LensIcon style={{fill: "red"}} /> </p>) }
             </div>
