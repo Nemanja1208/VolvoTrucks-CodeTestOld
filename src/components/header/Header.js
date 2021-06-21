@@ -1,10 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../features/userSlice';
+
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import './Header.css';
-import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 function Header() {
+    const dispatch = useDispatch();
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        dispatch(logout());
+    }
 
     const useStyles = makeStyles((theme) => ({
         button: {
@@ -16,13 +25,13 @@ function Header() {
 
     return (
         <div className="navigationHeader">
-            <a href="#">
+            <a href="https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg">
                 <img src="https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg" alt="" /> 
             </a>
                 <Button
-                    className={classes.button} variant="contained" color="secondary" startIcon={<VpnKeyIcon />}
+                    className={classes.button} onClick={(e) => handleLogout(e)} variant="contained" color="secondary" startIcon={<ExitToAppIcon />}
                 >
-                    LOG IN
+                    LOG OUT
                 </Button>
         </div>
     )
