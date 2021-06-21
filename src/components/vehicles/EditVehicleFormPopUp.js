@@ -12,6 +12,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 import './EditVehicleFormPopUp.css';
 
@@ -30,15 +31,17 @@ function EditVehicleFormPopUp({
   const useStyles = makeStyles((theme) => ({
     button: {
       margin: theme.spacing(1),
+      width: "200px",
     },
     form: {
       display: "flex",
       flexDirection: "row",
+      justifyContent: "space-between",
       margin: theme.spacing(1),
     },
     textFields: {
       margin: theme.spacing(1),
-      width: '25ch',
+      width: '250px',
     },
     formControl: {
       margin: theme.spacing(1),
@@ -61,7 +64,7 @@ function EditVehicleFormPopUp({
             aria-labelledby="alert-dialog-slide-title"
             aria-describedby="alert-dialog-slide-description"
           >
-            <DialogTitle id="alert-dialog-slide-title">{" Edit the Vehicle "}</DialogTitle>
+            <DialogTitle id="alert-dialog-slide-title">{" Edit the Vehicle "} <EditOutlinedIcon /></DialogTitle>
             <div className="editVehicleForm">
               <form className={classes.form} noValidate autoComplete="off">
                 <TextField
@@ -111,6 +114,9 @@ function EditVehicleFormPopUp({
                     <MenuItem value={"inactive"}>Inactive</MenuItem>
                   </Select>
                 </FormControl>
+                </form>
+                <h3>Edit equipment <EditOutlinedIcon /></h3>
+                <div className="checkboxFields">
                 {equipment ?
                   equipment.map((equipmentPart) => {
                     return(
@@ -141,13 +147,13 @@ function EditVehicleFormPopUp({
                     />)
                   })
                   }
-              </form>
+                </div>
             </div>
             <DialogActions>
-              <Button variant="contained" color="primary" onClick={updateVehicle} >
+              <Button className={classes.button} variant="contained" color="primary" onClick={updateVehicle} >
                 SAVE CHANGES
               </Button>
-              <Button variant="contained" color="secondary" onClick={handleCloseEditVehicleForm} >
+              <Button className={classes.button} variant="contained" color="secondary" onClick={handleCloseEditVehicleForm} >
                 CLOSE
               </Button>
             </DialogActions>
