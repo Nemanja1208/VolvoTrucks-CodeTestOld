@@ -23,12 +23,13 @@ function CardDetails({
 const useStyles = makeStyles((theme) => ({
     button: {
       margin: theme.spacing(1),
+      width: "50%",
     },
   }));
   const classes = useStyles();
 
     return (
-        <div key={vehicle.id} className="card" >
+      <div>
         <div className="container">
             <img src={ `images/` + vehicle.driver + `.jpg` } alt={vehicle.driver} ></img>
         </div>
@@ -44,26 +45,28 @@ const useStyles = makeStyles((theme) => ({
           ) : null
         }
         </div>
-        <Button
-            className={classes.button}
-            variant="contained"
-            color="default"
-            startIcon={<EditOutlinedIcon />}
-            onClick={() => {populateVehicleOnEdit(vehicle); handleOpenEditVehicleForm();}}
-        >
-            Edit
-        </Button>
-        <Button
-            className={classes.button}
-            variant="contained"
-            color="secondary"
-            startIcon={<DeleteIcon />}
-            onClick={handleOpenDeleteAlert}
-          >
-            Delete
-        </Button>
         </div>    
+    <div className="navigationButtons">
+      <Button
+        className={classes.button}
+        variant="contained"
+        color="default"
+        startIcon={<EditOutlinedIcon />}
+        onClick={() => {populateVehicleOnEdit(vehicle); handleOpenEditVehicleForm();}}
+      >
+        Edit
+      </Button>
+      <Button
+        className={classes.button}
+        variant="contained"
+        color="secondary"
+        startIcon={<DeleteIcon />}
+        onClick={handleOpenDeleteAlert}
+      >
+        Delete
+      </Button>
     </div>
+  </div>  
     )
 }
 
