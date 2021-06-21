@@ -6,6 +6,7 @@ import equipmentData from '../../data/equipments.json';
 import CardDetails from '../vehicles/CardDetails';
 import EditVehicleFormPopUp from './EditVehicleFormPopUp';
 import DeleteVehiclePopUp from './DeleteVehiclePopUp';
+import Header from '../header/Header';
 
 // Material UI & Styling
 import './Vehicles.css';
@@ -139,7 +140,7 @@ const Vehicles = () => {
   return (
     <div className="vehicles">
       <h1>MY FLEET</h1>
-
+      <Header />
       {updateVehicleData ? (
         <div>
           <EditVehicleFormPopUp

@@ -6,7 +6,9 @@
 		"status": "active",
 		"fuelType": "LNG",
 		"equipments": [
-			1
+			5,
+			3,
+			2
 		]
 	},
 	{
