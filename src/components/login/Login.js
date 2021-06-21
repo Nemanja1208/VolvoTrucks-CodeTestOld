@@ -27,6 +27,12 @@ function Login() {
     }
 
     return (
+        <div>
+            <div className="navigationHeader">
+            <a href="https://www.scania.com/content/dam/scanianoe/market/master/homepage/scania-wordmark.svg">
+                <img src="https://www.scania.com/content/dam/scanianoe/market/master/homepage/scania-wordmark.svg" alt="" /> 
+            </a>
+        </div>
         <div className="login">
             <form className="loginForm" onSubmit={(e) => handleSubmit(e)}>
                 <h1><LocalShippingIcon /> My Fleet - Login </h1>
@@ -36,6 +42,7 @@ function Login() {
                 <button type="submit" className="submitButton"> LOG IN </button>
             </form>
         </div>
+       </div> 
     )
 }
 

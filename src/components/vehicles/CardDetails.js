@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
         <h3><PersonPinOutlinedIcon /> DRIVER : {vehicle.driver}</h3>
         <h3><LocalGasStationIcon /> FUEL TYPE : {vehicle.fuelType}</h3>
         <div className="equipmentdiv">
-          <h3><ExtensionOutlinedIcon /> Equipment : </h3>
+          <h3><ExtensionOutlinedIcon /> Equipment </h3>
           { vehicle.equipments != null ? vehicle.equipments.map(element =>  
             <li key={element.id}>{equipmentData.find(e => e.id === element).name} 
             </li>

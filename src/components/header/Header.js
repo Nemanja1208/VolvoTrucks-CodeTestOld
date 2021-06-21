@@ -25,8 +25,8 @@ function Header() {
 
     return (
         <div className="navigationHeader">
-            <a href="https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg">
-                <img src="https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg" alt="" /> 
+            <a href="https://www.scania.com/content/dam/scanianoe/market/master/homepage/scania-wordmark.svg">
+                <img src="https://www.scania.com/content/dam/scanianoe/market/master/homepage/scania-wordmark.svg" alt="" /> 
             </a>
                 <Button
                     className={classes.button} onClick={(e) => handleLogout(e)} variant="contained" color="secondary" startIcon={<ExitToAppIcon />}
