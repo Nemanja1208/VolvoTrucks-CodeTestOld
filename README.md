@@ -5,7 +5,7 @@
 ## 1. Install all packages with * npm install *
 
 ## 2. Run the command * npm run dev *
-### This will run two servers concurrently, one which is the application frontend and other for API requests or backend
+### This will run two servers concurrently, one which is the application frontend and other for API requests or backend which we use to edit and update vehicles in JSON directly
 
 ## 3. In the LOGIN FORM you can write which ever email and password you want, as long as the Name field is Fleet Owner
 ## Fleet Owner 
