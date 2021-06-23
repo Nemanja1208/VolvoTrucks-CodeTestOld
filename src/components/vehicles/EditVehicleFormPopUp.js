@@ -22,7 +22,6 @@ function EditVehicleFormPopUp({
     equipment,
     openEditVehicleForm,
     handleCloseEditVehicleForm,
-    handleCheckboxState,
     handleChangedEquipmentCheckbox,
     updateVehicle })    
 {
@@ -119,8 +118,7 @@ function EditVehicleFormPopUp({
                           checked={updateVehicleData.equipments.some(item => item === equipmentPart.id)}
                           name={equipmentPart.name}
                           onChange={(e) => {
-                            handleCheckboxState(updateVehicleData.equipments.some(item => item === equipmentPart.id));
-                            handleChangedEquipmentCheckbox(equipmentPart.id);
+                            handleChangedEquipmentCheckbox(updateVehicleData.equipments.some(item => item === equipmentPart.id),equipmentPart.id);
                           }}
                         />
                         }

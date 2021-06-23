@@ -115,23 +115,16 @@ const Vehicles = () => {
     setOpenDeleteAlert(false);
   };
 
-  // CHECKBOX STATE
-  const [checkboxState, setCheckboxState] = useState();
-
-  const handleCheckboxState = (boolean) => {
-    setCheckboxState(!boolean);
-  }
-
   // CHANGING EQUIPMENT ARRAY
-  const handleChangedEquipmentCheckbox = (id) => {
+  const handleChangedEquipmentCheckbox = (boolean,id) => {
     let equipmentItems = updateVehicleData.equipments;
-    equipmentItems.push(id);
-    let equipmentItemsRemoveFrom = equipmentItems.filter(ITEM => ITEM !== id);
-
-    if(checkboxState){
+    let checkboxstatus = !boolean;
+    if(checkboxstatus){
+      equipmentItems.push(id);
       setUpdateVehicleData(updateVehicleData => ({
       ...updateVehicleData, equipments: equipmentItems
     }))} else {
+      let equipmentItemsRemoveFrom = equipmentItems.filter(ITEM => ITEM !== id);
       setUpdateVehicleData(updateVehicleData => ({
         ...updateVehicleData, equipments: equipmentItemsRemoveFrom
     }))}
@@ -149,7 +142,6 @@ const Vehicles = () => {
             equipment={equipment}
             openEditVehicleForm={openEditVehicleForm}
             handleCloseEditVehicleForm={handleCloseEditVehicleForm}
-            handleCheckboxState={handleCheckboxState}
             handleChangedEquipmentCheckbox={handleChangedEquipmentCheckbox}
             updateVehicle={updateVehicle}
           />
