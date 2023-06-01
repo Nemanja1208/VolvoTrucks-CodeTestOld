@@ -1,4 +1,7 @@
-# Getting Started with this project
+# Volvo Truct React Test simple solution
+React Redux CSS
+
+### Getting Started with this project
 
 ## 0. Download project from git repo, zip or git clone
 
